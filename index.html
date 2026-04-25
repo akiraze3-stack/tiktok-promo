@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby King — Магазин детских товаров</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(180deg, #8E2DE2 0%, #4A00E0 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Центрируем контент по вертикали */
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 900;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .description {
+            font-size: 19px;
+            line-height: 1.5;
+            margin-bottom: 35px;
+            font-weight: 500;
+        }
+
+        .description span {
+            color: #FF4D4D; /* Акцент на "НИЗКИЕ ЦЕНЫ" */
+            font-weight: bold;
+        }
+
+        .btn-wa {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Центрируем иконку и текст внутри */
+            background-color: white; /* Чистый белый фон */
+            color: #000;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 50px; /* Сильно округлые углы */
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+            max-width: 300px; /* Чтобы кнопка не была слишком широкой */
+            margin: 0 auto;
+        }
+
+        .btn-wa:active {
+            transform: scale(0.96);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .wa-icon-svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px; /* Расстояние до текста */
+            fill: #25D366; /* Зеленый цвет WhatsApp */
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Baby King</h1>
+
+        <div class="description">
+            Магазин детских товаров<br>
+            У нас <span>НИЗКИЕ ЦЕНЫ</span>
+        </div>
+
+        <a href="https://wa.me/77012597777?text=Здравствуйте!" class="btn-wa">
+            <svg class="wa-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l112.5-29.5c32.9 17.9 69 27.3 108.4 27.3 122.4 0 222-99.6 222-222 0-59.3-23.1-115.1-65.1-157.1zM223.9 445.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-66.9 17.5 17.8-65.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.5-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 54.1 81.2 54.1 130.4 0 101.7-82.8 184.5-184.5 184.5zm113.8-118c-6.1-3.1-36.1-17.8-41.7-19.8-5.6-2-9.7-3.1-13.8 3.1-4.1 6.1-15.8 19.8-19.4 23.9-3.6 4.1-7.1 4.6-13.2 1.5-6.1-3.1-25.7-9.5-49-30.3-18.1-16.1-30.3-36-33.9-42.1-3.6-6.1-.4-9.4 2.7-12.4 2.8-2.8 6.1-7.1 9.2-10.7 3.1-3.6 4.1-6.1 6.1-10.2 2-4.1 1-7.7-.5-10.7-1.5-3.1-13.8-33.2-18.9-45.4-5-12.1-10.1-10.5-13.8-10.7-3.6-.2-7.7-.2-11.7-.2-4.1 0-10.7 1.5-16.3 7.7-5.6 6.1-21.4 20.9-21.4 51 0 30.1 21.9 59.2 24.9 63.3 3.1 4.1 43.1 65.8 104.3 92.2 14.6 6.3 25.9 10.1 34.9 13 14.7 4.7 28 4 38.6 2.4 11.8-1.8 36.1-14.8 41.2-29.1 5.1-14.3 5.1-26.5 3.6-29.1-1.5-2.6-5.6-4.1-11.7-7.2z"/></svg>
+            Написать в WhatsApp
+        </a>
+    </div>
+
+    <footer>
+        © 2025-2026 Baby King Магазин.
+    </footer>
+
+</body>
+</html>
