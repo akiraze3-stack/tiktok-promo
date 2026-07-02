@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qiyal Studio — Курс по созданию мультфильмов</title>
+    <title>Baby King — Детские велосипеды и товары</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,8 +33,10 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             --border:#EAEAEA;
             --btn:#111111;
             --btn-hover:#333333;
-            --tag-bg:#FBF3DB;
-            --tag-ink:#956400;
+            --tag-bg:#E9F1FB;
+            --tag-ink:#1F5FA8;
+            --gis:#41A600;
+            --gis-hover:#358600;
         }
         *{box-sizing:border-box;}
         html{scroll-behavior:smooth;}
@@ -46,17 +48,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             line-height:1.6;
             -webkit-font-smoothing:antialiased;
         }
-        /* очень тихая тёплая подсветка для глубины (не градиент-декор) */
         .ambient{position:fixed; inset:0; pointer-events:none; z-index:0;
-            background:radial-gradient(60% 40% at 50% 0%, rgba(149,100,0,.04), transparent 70%);}
+            background:radial-gradient(60% 40% at 50% 0%, rgba(31,95,168,.05), transparent 70%);}
 
-        .wrap{position:relative; z-index:1; max-width:560px; margin:0 auto; padding:0 24px;}
+        .wrap{position:relative; z-index:1; max-width:620px; margin:0 auto; padding:0 24px;}
 
         /* HERO */
-        .hero{padding:88px 0 72px; text-align:center;}
+        .hero{padding:88px 0 64px; text-align:center;}
         .logo{
             width:64px; height:64px; margin:0 auto 28px;
-            border:1px solid var(--border); border-radius:12px; background:var(--surface);
+            border:1px solid var(--border); border-radius:16px; background:var(--surface);
             display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative;}
         .logo img{width:100%; height:100%; object-fit:cover;}
         .logo .mono{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
@@ -70,33 +71,69 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             font-size:52px; line-height:1.08; letter-spacing:-.02em;
             color:var(--ink); margin:0 0 18px;}
 
-        .sub{font-size:18px; color:var(--muted); margin:0 auto 36px; max-width:420px;}
+        .sub{font-size:18px; color:var(--muted); margin:0 auto 36px; max-width:440px;}
 
-        /* КНОПКА WHATSAPP — функционал и иконка сохранены, стиль минималистичный */
-        .btn-wa{
+        /* КНОПКИ */
+        .cta-row{display:flex; flex-wrap:wrap; gap:12px; justify-content:center;}
+        .btn{
             display:inline-flex; align-items:center; justify-content:center;
-            background:var(--btn); color:#fff; text-decoration:none;
-            padding:16px 26px; border-radius:8px; font-size:16px; font-weight:600;
-            transition:background .2s ease, transform .1s ease;}
+            text-decoration:none; padding:16px 26px; border-radius:10px;
+            font-size:16px; font-weight:600;
+            transition:background .2s ease, transform .1s ease, box-shadow .2s ease;}
+        .btn:active{transform:scale(.98);}
+
+        /* КНОПКА WHATSAPP — функционал и иконка сохранены */
+        .btn-wa{background:var(--btn); color:#fff;}
         .btn-wa:hover{background:var(--btn-hover);}
-        .btn-wa:active{transform:scale(.98);}
         .wa-icon{width:20px; height:20px; fill:#25D366; margin-right:10px;}
 
-        .note{font-size:13px; color:var(--muted); margin-top:14px;}
+        /* КНОПКА 2GIS */
+        .btn-gis{background:var(--surface); color:var(--ink);
+            border:1px solid var(--border);}
+        .btn-gis:hover{border-color:var(--gis); box-shadow:0 0 0 3px rgba(65,166,0,.12);}
+        .gis-dot{width:11px; height:11px; border-radius:50%;
+            background:var(--gis); margin-right:10px; box-shadow:0 0 0 4px rgba(65,166,0,.18);}
+
+        .note{font-size:13px; color:var(--muted); margin-top:16px;}
 
         /* РАЗДЕЛИТЕЛЬ */
         .rule{height:1px; background:var(--border); border:0; margin:0;}
 
-        /* ЧТО ВНУТРИ — плоский бенто */
+        /* ГАЛЕРЕЯ ВЕЛОСИПЕДОВ */
         .block{padding:64px 0;}
         .label{font-size:12px; letter-spacing:.1em; text-transform:uppercase;
-            color:var(--muted); margin-bottom:24px; text-align:center;}
-        .grid{display:grid; gap:14px;}
-        @media(min-width:480px){.grid{grid-template-columns:1fr 1fr 1fr;}}
+            color:var(--muted); margin-bottom:12px; text-align:center;}
+        .lead{font-family:'Instrument Serif',serif; font-weight:400;
+            font-size:30px; line-height:1.2; letter-spacing:-.01em;
+            color:var(--ink); text-align:center; margin:0 auto 32px; max-width:480px;}
+
+        .gallery{display:grid; gap:14px;}
+        @media(min-width:560px){.gallery{grid-template-columns:1fr 1fr;}}
+        .gallery figure{margin:0; border:1px solid var(--border); border-radius:16px;
+            background:var(--surface); overflow:hidden;}
+        .gallery figure:first-child{grid-column:1 / -1;}
+        .gallery img{display:block; width:100%; height:100%; object-fit:cover; aspect-ratio:4/3;}
+        .gallery figure:first-child img{aspect-ratio:16/9;}
+
+        /* КЛАССЫ ВЕЛОСИПЕДОВ */
+        .grid{display:grid; gap:14px; margin-top:36px;}
+        @media(min-width:480px){.grid{grid-template-columns:1fr 1fr;}}
         .cell{border:1px solid var(--border); border-radius:12px; background:var(--surface);
-            padding:26px 22px; text-align:center;}
+            padding:24px 22px; text-align:left;}
         .cell h3{font-family:'Instrument Serif',serif; font-weight:400; font-size:24px;
-            color:var(--ink); margin:0;}
+            color:var(--ink); margin:0 0 6px;}
+        .cell p{font-size:14px; color:var(--muted); margin:0;}
+
+        /* БРЕНДЫ */
+        .brands{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:6px;}
+        .brand{display:inline-block; font-size:15px; font-weight:600; letter-spacing:.02em;
+            color:var(--ink); background:var(--surface); border:1px solid var(--border);
+            border-radius:9999px; padding:10px 20px;}
+
+        /* ОПТ / РОЗНИЦА */
+        .trade{padding:56px 0; text-align:center;}
+        .trade .lead{margin-bottom:8px;}
+        .trade .sub{margin:0 auto; max-width:460px;}
 
         /* ДЛЯ КОГО */
         .for{padding:56px 0; text-align:center;}
@@ -111,7 +148,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         footer{border-top:1px solid var(--border); text-align:center;
             font-size:12px; color:var(--muted); padding:24px 0;}
 
-        /* мягкое появление */
         .reveal{opacity:0; transform:translateY(12px);
             transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);}
         .reveal.in{opacity:1; transform:none;}
@@ -130,53 +166,94 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
         <section class="hero">
             <div class="logo">
-                <span class="mono">Q</span>
-                <img src="logo.png" alt="Qiyal Studio" onerror="this.style.display='none'">
+                <span class="mono">BK</span>
+                <img src="logo.png" alt="Baby King" onerror="this.style.display='none'">
             </div>
 
-            <span class="tag">Qiyal Studio · Онлайн-курс</span>
+            <span class="tag">Baby King · Магазин детских товаров</span>
 
-            <h1>Курс по созданию мультфильмов</h1>
+            <h1>Велосипеды<br>для взрослых и детей</h1>
 
-            <p class="sub">Анимация, love story и короткие истории — с нуля, без навыков и опыта.</p>
+            <p class="sub">Большой выбор велосипедов от проверенных брендов — качественно, с гарантией и по доступным ценам.</p>
 
-            <a href="https://wa.me/77471289330?text=Здравствуйте! Хочу узнать про курс" class="btn-wa" onclick="ttq.track('Contact');">
-                <svg class="wa-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l112.5-29.5c32.9 17.9 69 27.3 108.4 27.3 122.4 0 222-99.6 222-222 0-59.3-23.1-115.1-65.1-157.1zM223.9 445.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-66.9 17.5 17.8-65.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.5-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 54.1 81.2 54.1 130.4 0 101.7-82.8 184.5-184.5 184.5zm113.8-118c-6.1-3.1-36.1-17.8-41.7-19.8-5.6-2-9.7-3.1-13.8 3.1-4.1 6.1-15.8 19.8-19.4 23.9-3.6 4.1-7.1 4.6-13.2 1.5-6.1-3.1-25.7-9.5-49-30.3-18.1-16.1-30.3-36-33.9-42.1-3.6-6.1-.4-9.4 2.7-12.4 2.8-2.8 6.1-7.1 9.2-10.7 3.1-3.6 4.1-6.1 6.1-10.2 2-4.1 1-7.7-.5-10.7-1.5-3.1-13.8-33.2-18.9-45.4-5-12.1-10.1-10.5-13.8-10.7-3.6-.2-7.7-.2-11.7-.2-4.1 0-10.7 1.5-16.3 7.7-5.6 6.1-21.4 20.9-21.4 51 0 30.1 21.9 59.2 24.9 63.3 3.1 4.1 43.1 65.8 104.3 92.2 14.6 6.3 25.9 10.1 34.9 13 14.7 4.7 28 4 38.6 2.4 11.8-1.8 36.1-14.8 41.2-29.1 5.1-14.3 5.1-26.5 3.6-29.1-1.5-2.6-5.6-4.1-11.7-7.2z"/></svg>
-                Написать в WhatsApp
-            </a>
-            <div class="note">Расскажем про программу и старт потока</div>
+            <div class="cta-row">
+                <a href="https://wa.me/77770830007?text=Здравствуйте! Хочу приобрести велосипед" class="btn btn-wa" onclick="ttq.track('Contact');">
+                    <svg class="wa-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l112.5-29.5c32.9 17.9 69 27.3 108.4 27.3 122.4 0 222-99.6 222-222 0-59.3-23.1-115.1-65.1-157.1zM223.9 445.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-66.9 17.5 17.8-65.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.5-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 54.1 81.2 54.1 130.4 0 101.7-82.8 184.5-184.5 184.5zm113.8-118c-6.1-3.1-36.1-17.8-41.7-19.8-5.6-2-9.7-3.1-13.8 3.1-4.1 6.1-15.8 19.8-19.4 23.9-3.6 4.1-7.1 4.6-13.2 1.5-6.1-3.1-25.7-9.5-49-30.3-18.1-16.1-30.3-36-33.9-42.1-3.6-6.1-.4-9.4 2.7-12.4 2.8-2.8 6.1-7.1 9.2-10.7 3.1-3.6 4.1-6.1 6.1-10.2 2-4.1 1-7.7-.5-10.7-1.5-3.1-13.8-33.2-18.9-45.4-5-12.1-10.1-10.5-13.8-10.7-3.6-.2-7.7-.2-11.7-.2-4.1 0-10.7 1.5-16.3 7.7-5.6 6.1-21.4 20.9-21.4 51 0 30.1 21.9 59.2 24.9 63.3 3.1 4.1 43.1 65.8 104.3 92.2 14.6 6.3 25.9 10.1 34.9 13 14.7 4.7 28 4 38.6 2.4 11.8-1.8 36.1-14.8 41.2-29.1 5.1-14.3 5.1-26.5 3.6-29.1-1.5-2.6-5.6-4.1-11.7-7.2z"/></svg>
+                    Написать в WhatsApp
+                </a>
+                <a href="https://go.2gis.com/jaAMK" target="_blank" rel="noopener" class="btn btn-gis">
+                    <span class="gis-dot"></span>
+                    Мы на 2ГИС
+                </a>
+            </div>
+            <div class="note">Ответим на вопросы и поможем с выбором · +7 777 083 0007</div>
         </section>
 
         <hr class="rule">
 
         <section class="block reveal">
-            <div class="label">Что вы создадите</div>
-            <div class="grid">
-                <div class="cell"><h3>Мультфильмы</h3></div>
-                <div class="cell"><h3>Love story</h3></div>
-                <div class="cell"><h3>Короткие анимации</h3></div>
+            <div class="label">Наш ассортимент</div>
+            <p class="lead">У нас широкий ассортимент велосипедов — на любой возраст, стиль и бюджет.</p>
+
+            <div class="gallery">
+                <figure><img src="photo/IMG_9055.png" alt="Велосипед Baby King" loading="lazy"></figure>
+                <figure><img src="photo/IMG_9055 (1).png" alt="Велосипед Baby King" loading="lazy"></figure>
+                <figure><img src="photo/IMG_9055 (2).png" alt="Велосипед Baby King" loading="lazy"></figure>
             </div>
         </section>
 
         <hr class="rule">
 
-        <section class="for reveal">
-            <p>Подойдёт новичкам.<br>Опыт в анимации и дизайне не нужен.</p>
+        <section class="block reveal">
+            <div class="label">Бренды-партнёры</div>
+            <p class="lead">Сотрудничаем с проверенными брендами.</p>
+            <div class="brands">
+                <span class="brand">TRINX</span>
+                <span class="brand">MACOGE</span>
+                <span class="brand">HMBROS</span>
+                <span class="brand">GTR</span>
+            </div>
+        </section>
+
+        <hr class="rule">
+
+        <section class="block reveal">
+            <div class="label">Классы велосипедов</div>
+            <p class="lead">Подберём под ваш стиль катания.</p>
+            <div class="grid">
+                <div class="cell"><h3>МТБ</h3><p>Горные велосипеды для города и бездорожья</p></div>
+                <div class="cell"><h3>Двухподвесы</h3><p>Максимальный комфорт на любом покрытии</p></div>
+                <div class="cell"><h3>Фикс</h3><p>Городские fixed-gear для скорости и стиля</p></div>
+                <div class="cell"><h3>Детские</h3><p>Надёжные модели для юных райдеров</p></div>
+            </div>
+        </section>
+
+        <hr class="rule">
+
+        <section class="trade reveal">
+            <p class="lead">Опт и розница по доступным ценам</p>
+            <p class="sub">Продаём как поштучно, так и оптом — выгодные условия для магазинов и постоянных клиентов.</p>
         </section>
 
         <hr class="rule">
 
         <section class="final reveal">
-            <h2>Начните свой первый мультфильм</h2>
-            <a href="https://wa.me/77471289330?text=Здравствуйте! Хочу узнать про курс" class="btn-wa" onclick="ttq.track('Contact');">
-                <svg class="wa-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l112.5-29.5c32.9 17.9 69 27.3 108.4 27.3 122.4 0 222-99.6 222-222 0-59.3-23.1-115.1-65.1-157.1zM223.9 445.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-66.9 17.5 17.8-65.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.5-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 54.1 81.2 54.1 130.4 0 101.7-82.8 184.5-184.5 184.5zm113.8-118c-6.1-3.1-36.1-17.8-41.7-19.8-5.6-2-9.7-3.1-13.8 3.1-4.1 6.1-15.8 19.8-19.4 23.9-3.6 4.1-7.1 4.6-13.2 1.5-6.1-3.1-25.7-9.5-49-30.3-18.1-16.1-30.3-36-33.9-42.1-3.6-6.1-.4-9.4 2.7-12.4 2.8-2.8 6.1-7.1 9.2-10.7 3.1-3.6 4.1-6.1 6.1-10.2 2-4.1 1-7.7-.5-10.7-1.5-3.1-13.8-33.2-18.9-45.4-5-12.1-10.1-10.5-13.8-10.7-3.6-.2-7.7-.2-11.7-.2-4.1 0-10.7 1.5-16.3 7.7-5.6 6.1-21.4 20.9-21.4 51 0 30.1 21.9 59.2 24.9 63.3 3.1 4.1 43.1 65.8 104.3 92.2 14.6 6.3 25.9 10.1 34.9 13 14.7 4.7 28 4 38.6 2.4 11.8-1.8 36.1-14.8 41.2-29.1 5.1-14.3 5.1-26.5 3.6-29.1-1.5-2.6-5.6-4.1-11.7-7.2z"/></svg>
-                Написать в WhatsApp
-            </a>
+            <h2>Выберите свой<br>велосипед</h2>
+            <div class="cta-row">
+                <a href="https://wa.me/77770830007?text=Здравствуйте! Хочу приобрести велосипед" class="btn btn-wa" onclick="ttq.track('Contact');">
+                    <svg class="wa-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l112.5-29.5c32.9 17.9 69 27.3 108.4 27.3 122.4 0 222-99.6 222-222 0-59.3-23.1-115.1-65.1-157.1zM223.9 445.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-66.9 17.5 17.8-65.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.5-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 54.1 81.2 54.1 130.4 0 101.7-82.8 184.5-184.5 184.5zm113.8-118c-6.1-3.1-36.1-17.8-41.7-19.8-5.6-2-9.7-3.1-13.8 3.1-4.1 6.1-15.8 19.8-19.4 23.9-3.6 4.1-7.1 4.6-13.2 1.5-6.1-3.1-25.7-9.5-49-30.3-18.1-16.1-30.3-36-33.9-42.1-3.6-6.1-.4-9.4 2.7-12.4 2.8-2.8 6.1-7.1 9.2-10.7 3.1-3.6 4.1-6.1 6.1-10.2 2-4.1 1-7.7-.5-10.7-1.5-3.1-13.8-33.2-18.9-45.4-5-12.1-10.1-10.5-13.8-10.7-3.6-.2-7.7-.2-11.7-.2-4.1 0-10.7 1.5-16.3 7.7-5.6 6.1-21.4 20.9-21.4 51 0 30.1 21.9 59.2 24.9 63.3 3.1 4.1 43.1 65.8 104.3 92.2 14.6 6.3 25.9 10.1 34.9 13 14.7 4.7 28 4 38.6 2.4 11.8-1.8 36.1-14.8 41.2-29.1 5.1-14.3 5.1-26.5 3.6-29.1-1.5-2.6-5.6-4.1-11.7-7.2z"/></svg>
+                    Написать в WhatsApp
+                </a>
+                <a href="https://go.2gis.com/jaAMK" target="_blank" rel="noopener" class="btn btn-gis">
+                    <span class="gis-dot"></span>
+                    Мы на 2ГИС
+                </a>
+            </div>
         </section>
 
     </div>
 
-    <footer>© 2025–2026 Qiyal Studio</footer>
+    <footer>© 2025–2026 Baby King</footer>
 
     <script>
         var io = new IntersectionObserver(function(entries){
